@@ -30,23 +30,23 @@ app.controller('FoodController', ['$http', function ($http){
         });
     };
 
-    self.deleteFood = function(id) {
+    self.deleteFood = function(foodToDelete) {
         $http({
             method: 'DELETE',
-            url: '/food/' + id,
+            url: '/food/' + foodToDelete.id,
         }).then(function(response) {
-            console.log('DELETE response', response);
+            console.log('response', response);
             self.getFood();
         });
     };
 
-    self.editFood = function(id, food) {
+    self.editFood = function(foodToEdit) {
         $http({
             method: 'PUT',
-            url: '/food/' + id,
-            data: food
+            url: '/food',
+            data: foodToEdit
         }).then(function(response) {
-            console.log('PUT response', response);
+            console.log('response', response);
             self.getFood();
         });
     };

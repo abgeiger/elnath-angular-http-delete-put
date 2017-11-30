@@ -20,25 +20,23 @@
     <input type="checkbox" ng-model="vm.newFood.is_hot">
     {{vm.newFood}}
     <button ng-click="vm.addNewFood(vm.newFood)">Add New Food</button>
-    <ul>
-        <li ng-repeat="food in vm.foodArray">
-            <input type="text" ng-model="food.name"/>
-            <input type="number" ng-model="food.deliciousness_rating"/>
-            <!-- <label>Is it hot?</label> -->
-            <input type="checkbox" ng-model="food.is_hot"/>
-            <span ng-show="food.is_hot">is really hot!</span> 
-            <!-- ng-show and ng-if do basically the same thing -->
-            <span ng-hide="food.is_hot">is not that hot</span>
-            and
-            {{food.deliciousness_rating > 80 ? "is really, really delicious" : "is ok" }}
-            <button ng-click="vm.deleteFood(food.id)">Delete</button>
-            <button ng-click="vm.editFood(food.id, food)">Edit</button>
-            <!-- <input type="text" ng-model="vm.Food.name" placeholder="name">
-            <input type="number" ng-model="vm.newFood.deliciousness_rating" placeholder="Deliciousness Rating">
-            <label>Is it hot?</label>
-            <input type="checkbox" ng-model="vm.newFood.is_hot"> -->
-        </li>
-    </ul>
-    {{3+9}}
+    <div ng-repeat="food in vm.foodArray">
+        <h3>{{food.name}}</h3>
+        <span ng-show="food.is_hot">is really hot!</span> 
+        <!-- ng-show and ng-if do basically the same thing -->
+        <span ng-hide="food.is_hot">is not that hot</span>
+        and
+        <!-- ternary statement -->
+        {{food.deliciousness_rating > 80 ? "is really, really delicious!" : "is ok." }}
+        <pre>The SQL id for this food is {{food.id}}.</pre>
+        <pre>The angular $index for this food is {{$index}}.</pre>
+        <input type="text" ng-model="food.name" placeholder="name">
+        <input type="number" ng-model="food.deliciousness_rating" placeholder="Deliciousness Rating">
+        <label>Is it hot?</label>
+        <input type="checkbox" ng-model="food.is_hot">
+        <button ng-click="vm.deleteFood(food)">Delete</button>
+        <button ng-click="vm.editFood(food)">Save</button>
+        <hr>        
+    </div>
 </body>
 </html>
