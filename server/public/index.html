@@ -24,13 +24,13 @@
         <li ng-repeat="food in vm.foodArray">
             <input type="text" ng-model="food.name"/>
             <input type="number" ng-model="food.deliciousness_rating"/>
-            <label>Is it hot?</label>
+            <!-- <label>Is it hot?</label> -->
             <input type="checkbox" ng-model="food.is_hot"/>
-            <!-- <span ng-show="food.is_hot">is really hot!</span>  -->
+            <span ng-show="food.is_hot">is really hot!</span> 
             <!-- ng-show and ng-if do basically the same thing -->
-            <!-- <span ng-hide="food.is_hot">is not that hot</span>
+            <span ng-hide="food.is_hot">is not that hot</span>
             and
-            {{food.deliciousness_rating > 80 ? "Is really really delicious" : "is ok" }} -->
+            {{food.deliciousness_rating > 80 ? "is really, really delicious" : "is ok" }}
             <button ng-click="vm.deleteFood(food.id)">Delete</button>
             <button ng-click="vm.editFood(food.id, food)">Edit</button>
             <!-- <input type="text" ng-model="vm.Food.name" placeholder="name">
