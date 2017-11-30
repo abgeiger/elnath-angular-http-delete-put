@@ -14,6 +14,12 @@
 
     <h1>Angular HTTP</h1>
     <h2>Food List</h2>
+    <input type="text" ng-model="vm.newFood.name" placeholder="name">
+    <input type="number" ng-model="vm.newFood.deliciousness_rating" placeholder="Deliciousness Rating">
+    <label>Is it hot?</label>
+    <input type="checkbox" ng-model="vm.newFood.is_hot">
+    {{vm.newFood}}
+    <button ng-click="vm.addNewFood(vm.newFood)">Add New Food</button>
     <ul>
         <li ng-repeat="food in vm.foodArray">
             {{food.name}} 

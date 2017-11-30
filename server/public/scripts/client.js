@@ -6,6 +6,8 @@ app.controller('FoodController', ['$http', function ($http){
     self.message = 'Zip zap partner!';
     self.foodArray = [];
 
+    self.newFood = { is_hot: false };
+
     self.getFood = function () {
         $http({
             method: 'GET',
@@ -15,6 +17,18 @@ app.controller('FoodController', ['$http', function ($http){
             self.foodArray = response.data;
         });
     };
+
+    self.addNewFood = function(newFood) {
+        $http({
+            method: 'POST',
+            url: '/food',
+            data: newFood
+        }).then(function(response) {
+            console.log('response', response);
+            self.newFood = { is_hot: false };
+            self.getFood();
+        });
+    }
     
     self.getFood();
     
