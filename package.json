@@ -1,0 +1,27 @@
+{
+  "name": "elnath-angular-http",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PrimeAcademy/elnath-angular-http.git"
+  },
+  "keywords": [],
+  "author": "Luke Schlangen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PrimeAcademy/elnath-angular-http/issues"
+  },
+  "homepage": "https://github.com/PrimeAcademy/elnath-angular-http#readme",
+  "dependencies": {
+    "angular": "^1.6.7",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "pg": "^7.4.0"
+  }
+}
