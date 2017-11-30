@@ -9,8 +9,21 @@
     <script src="/scripts/client.js"></script>
 </head>
 <body ng-app="RestaurantApp" ng-controller="FoodController as vm">
-    {{vm.message}}
+    <p>vm.message: {{vm.message}}</p>
+    <p>vm.foodArray: {{vm.foodArray}}</p>
+
     <h1>Angular HTTP</h1>
+    <h2>Food List</h2>
+    <ul>
+        <li ng-repeat="food in vm.foodArray">
+            {{food.name}} 
+            <span ng-show="food.is_hot">is really hot!</span> 
+            <!-- ng-show and ng-if do basically the same thing -->
+            <span ng-hide="food.is_hot">is not that hot</span>
+            and
+            {{food.deliciousness_rating > 80 ? "Is really really delicious" : "is ok" }}
+        </li>
+    </ul>
     {{3+9}}
 </body>
 </html>
