@@ -1,5 +1,5 @@
 {
-  "name": "elnath-angular-http",
+  "name": "elnath-angular-http-delete-put",
   "version": "1.0.0",
   "description": "",
   "main": "server/server.js",
